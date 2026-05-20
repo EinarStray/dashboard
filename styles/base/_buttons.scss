@@ -1,0 +1,60 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+%transition {
+  transition: all 0.1s ease-in-out;
+}
+
+.btn {
+  padding: 1rem;
+  font-size: 1.4rem;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+
+.btn.add {
+  background-color: constants.$color-btn-add;
+
+  &:hover {
+    @extend %transition;
+    background-color: constants.$color-btn-add-hover;
+  }
+}
+
+.btn.cancel {
+  background-color: constants.$color-btn-cancel;
+
+  &:hover {
+    @extend %transition;
+    background-color: constants.$color-btn-cancel-hover;
+  }
+}
+
+.btn.delete {
+  background-color: constants.$color-btn-delete;
+
+  &:hover {
+    @extend %transition;
+    background-color: constants.$color-btn-delete-hover;
+  }
+}
+
+.btn.assign {
+  background-color: constants.$color-btn-assign;
+
+  &:hover {
+    @extend %transition;
+    background-color: constants.$color-btn-assign_hover;
+  }
+}
+
+.btn.available {
+  background-color: constants.$color-btn-available;
+
+  &:hover {
+    @extend %transition;
+    background-color: constants.$color-btn-available_hover;
+  }
+}

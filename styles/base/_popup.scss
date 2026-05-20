@@ -1,0 +1,109 @@
+@use "../abstracts/constants";
+
+.assign-popup {
+  position: fixed;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+  background: #fff;
+  border-radius: 7px;
+  border: 1px solid #bdc3c7;
+  box-shadow: 0 4px 12px #0003;;
+  padding: 2rem;
+  max-width: 25%;
+}
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.project-section.hidden {
+  display: none;
+}
+
+.assign-popup__title {
+  width: 100%;
+  font-size: 2.5rem;
+  border-bottom: 1px solid #bdc3c7;
+  padding-bottom: 2px;
+}
+
+.current-state {
+  background: #c0d6f3;
+  border-left: 3px solid constants.$color-sidebar-bg-hover;
+  border-radius: 7px;
+  padding: 1rem;
+}
+
+.current-capacity {
+  padding-bottom: 0.5rem;
+}
+
+.current-state p {
+  margin: 0;
+}
+
+.capacity-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+select[name='select-project'] {
+  height: auto;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  background: constants.$color-sidebar-bg-active;
+  color: white;
+}
+
+.capacity-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+input[name='allocation'], input[name='fit'] {
+  width: 100%;
+}
+
+.allocation-hint, .fit-hint {
+  font-weight: 400;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.project-info {
+  background: #dadee3;
+  border-radius: 7px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.info-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.assign__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.5rem;
+}

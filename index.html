@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script type="module" src="./src/main.js"></script>
+</head>
+<body>
+  <aside class="sidebar opened">
+    <div class="sidebar-close">
+      <div class="sidebar-close-container">
+        <span class="sidebar-close-line"></span>
+      </div>
+    </div>
+    <div class="calendar">
+      <h3 class="calendar-title">Period</h3>
+      <select class="calendar-month" id="calendar-month">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March">March</option>
+        <option value="April" selected>April</option>
+        <option value="May">May</option>
+        <option value="June">June</option>
+        <option value="July">July</option>
+        <option value="August">August</option>
+        <option value="September">September</option>
+        <option value="October">October</option>
+        <option value="November">November</option>
+        <option value="December">December</option>
+      </select>
+      <select class="calendar-year" id="calendar-year">
+        <option value="2025">2025</option>
+        <option value="2026">2026</option>
+        <option value="2027">2027</option>
+      </select>
+    </div>
+    <br>
+    <div class="tabs">
+      <h4 class="tab" data-state="projects">Projects</h4>
+      <h4 class="tab" data-state="employees">Employee</h4>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="projects main-space" data-state="projects">
+      <div class="header-panel">
+        <h1 class="main__title">Projects</h1>
+        <div class="proj__buttons">
+          <button class="btn add add-proj" id="add-proj">+Add Project</button>
+          <button class="btn add" id="seed">Seed Data</button>
+        </div>
+      </div>
+      <table class="table projects__table" id="projects-table">
+        <thead id="table-header" class="table__header">
+        <tr>
+          <th>
+            <div class="th">
+              Company Name
+              <span class="grid-sort">⇅</span>
+              <span class="grid-search">⌕</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Project Name
+              <span class="grid-sort">⇅</span>
+              <span class="grid-search">⌕</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Budget
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Employee Capacity
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Employees
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Estimated Income
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Actions
+            </div>
+          </th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="total-income">
+        Total Estimated Income:
+        <span class="total plus">$0.00</span>
+      </div>
+      <div class="add__project">
+        <h2>Add New Project</h2>
+        <form action="" id="add-project" class="add-project">
+          <label for="project-name" class="input-label">Project Name:</label>
+          <input type="text" name="project-name" id="project-name" pattern="[A-Za-z0-9\s]+" required minlength="3">
+          <label for="company-name" class="input-label">Company Name:</label>
+          <input type="text" name="company-name" id="company-name" pattern="[A-Za-z0-9\s]+" required minlength="2">
+          <label for="budget" class="input-label">Budget:</label>
+          <input type="number" name="budget" id="budget" required minlength="0.01" step="0.01">
+          <label for="capacity" class="input-label">Employee Capacity:</label>
+          <input type="number" name="capacity" id="capacity" required minlength="1" step="1">
+        </form>
+        <div class="add-project-buttons">
+          <button type="submit" form="add-project" class="btn add">Add</button>
+          <button type="button" class="btn cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="employees main-space" data-state="employees">
+      <div class="header-panel">
+        <h1 class="main__title">Employees</h1>
+        <div class="employ__buttons">
+          <button class="btn add add-employ" id="add-employ">+Add Employee</button>
+        </div>
+      </div>
+      <table class="table employees__table" id="employees-table">
+        <thead id="table-header" class="table__header">
+        <tr>
+          <th>
+            <div class="th">
+              Name
+              <span class="grid-sort">⇅</span>
+              <span class="grid-search">⌕</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Surname
+              <span class="grid-sort">⇅</span>
+              <span class="grid-search">⌕</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Age
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Position
+              <span class="grid-sort">⇅</span>
+              <span class="grid-search">⌕</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Salary
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Estimated Payment
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Project
+              <span class="grid-sort">⇅</span>
+              <span class="grid-search">⌕</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Project Income
+              <span class="grid-sort">⇅</span>
+            </div>
+          </th>
+          <th>
+            <div class="th">
+              Actions
+            </div>
+          </th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <div class="add__employee">
+        <h2>Add New Employee</h2>
+        <form action="" id="add-employee" class="add-employee">
+          <label for="name" class="input-label">Name:</label>
+          <input type="text" name="name" id="name" pattern="[A-Za-z\s]+" required autocomplete="true" minlength="3">
+          <label for="surname" class="input-label">Surname:</label>
+          <input type="text" name="surname" id="surname" pattern="[A-Za-z\s]+" required minlength="3">
+          <label for="birth" class="input-label">Date of Birth:</label>
+          <input type="date" name="birth" id="birth" required minlength="0.01" step="0.01">
+          <label for="position" class="input-label">Position:</label>
+          <select name="position" id="position" required>
+            <option value>Select Position</option>
+            <option value="Junior">Junior</option>
+            <option value="Middle">Middle</option>
+            <option value="Senior">Senior</option>
+            <option value="Lead">Lead</option>
+            <option value="Architect">Architect</option>
+            <option value="BO">BO</option>
+          </select>
+          <label for="salary" class="input-label">Salary:</label>
+          <input type="number" name="salary" id="salary" required min="0.01" step="0.01">
+        </form>
+        <div class="add-employee-buttons">
+          <button type="submit" form="add-employee" class="btn add">Add</button>
+          <button type="button" class="btn cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="open-sidebar hidden">→</div>
+    <div class="assign-popup hidden">
+      <div class="assign-popup__title"></div>
+      <div class="current-state">
+        <p class="current-capacity">Current Capacity: 1.0 / 1.5</p>
+        <p class="current-available">Available:
+        <span class="plus">0.5</span></p>
+      </div>
+      <label for="select-project">Select Project:</label>
+      <select name="select-project" id="select-project">
+        <option value="">Select a project</option>
+      </select>
+      <div class="project-section hidden">
+        <div class="capacity-section">
+          <label for="allocation">Capacity Allocation: 0.5</label>
+          <input type="range" name="allocation" id="allocation" min="0" max="1" step="0.1" value="0.5">
+          <span class="allocation-hint">Adjust capacity (0.0 - 1.5)</span>
+          <label for="fit">Project Fit: 1.00</label>
+          <input type="range" name="fit" id="fit" min="0" max="1" step="0.1" value="0.5">
+          <span class="fit-hint">Project fit coefficient (0.0-1.0). Effective capacity = capacity × fit</span>
+        </div>
+        <div class="project-info">
+          <div class="info-row">
+            <span class="info-label">Project Capacity:</span>
+            <span class="info-value">
+            <span class="used-capacity">0.8</span>
+            /
+            <span class="total-capacity">2</span>
+          </span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Effective Capacity:</span>
+            <span class="info-value">
+            <span class="used-capacity">0.50</span>
+          </span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">After Assignment:</span>
+            <span class="info-value">
+            <span class="used-capacity target-capacity">1.26 / 2</span>
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="assign__buttons">
+        <button type="submit" class="btn add">Assign</button>
+        <button type="button" class="btn cancel">Cancel</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

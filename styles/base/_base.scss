@@ -1,0 +1,54 @@
+@use "../abstracts/constants";
+@use "../abstracts/mixins";
+
+%transition {
+  transition: all 0.1s ease-in-out;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.hidden {
+  @extend %transition;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main {
+  width: 100%;
+  position: relative;
+  flex-grow: 1;
+}
+
+h1 {
+  font-size: 3.8rem;
+  font-weight: bold;
+  color: constants.$color-font-dark
+}
+
+h3 {
+  font-size: 2.3rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.plus {
+  color: #2cb756;
+}
+
+.minus {
+  color: #e82323;
+}
